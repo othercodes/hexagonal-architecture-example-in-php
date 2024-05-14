@@ -1,0 +1,26 @@
+{
+  "name": "othercode/hexagonal-architecture-example",
+  "description": "Small example of Hexagonal Architecture.",
+  "minimum-stability": "stable",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Unay Santisteban",
+      "email": "usantisteban@othercode.io"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "doctrine/orm": "^3",
+    "doctrine/dbal": "^4",
+    "symfony/cache": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "OtherCode\\": "src/"
+    }
+  },
+  "scripts": {
+    "db:initialize": "php bin/doctrine orm:schema-tool:update --force --dump-sql"
+  }
+}
