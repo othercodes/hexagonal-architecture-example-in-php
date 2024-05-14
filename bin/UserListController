@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require_once "vendor/autoload.php";
+
+use OtherCode\UserManagement\Application\UserFinder;
+use OtherCode\UserManagement\Infrastructure\DoctrineUserRepository;
+
+$repository = new DoctrineUserRepository(require __DIR__.'/../database.php');
+$service = new UserFinder($repository);
+
+foreach ($service->all() as $user) {
+    echo "#{$user->id()} $user->name\n";
+}
+exit(0);
