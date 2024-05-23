@@ -17,3 +17,11 @@ Next, run the commands:
 php bin/UserListController
 php bin/UserCreateController "Vincent Vega"
 ```
+
+## Testing
+
+Running tests is quite easy, just execute the following command:
+
+```bash
+composer test
+```
