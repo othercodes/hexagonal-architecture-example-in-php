@@ -6,9 +6,15 @@ declare(strict_types=1);
 require_once "vendor/autoload.php";
 
 use OtherCode\UserManagement\Application\UserCreator;
-use OtherCode\UserManagement\Infrastructure\DoctrineUserRepository;
+use OtherCode\UserManagement\Infrastructure\Persistence\DoctrineUserRepository;
+use OtherCode\UserManagement\Infrastructure\Persistence\JsonFileUserRepository;
 
-$repository = new DoctrineUserRepository(require __DIR__.'/../database.php');
+use function OtherCode\Shared\Infrastructure\Persistence\Doctrine\provideEntityManger;
+
+$configuration = require 'configuration.php';
+
+$repository = new DoctrineUserRepository(provideEntityManger($configuration['persistence']['database']));
+//$repository = new JsonFileUserRepository($configuration['persistence']['json']['path']);
 $service = new UserCreator($repository);
 
 if (!isset($argv[1])) {

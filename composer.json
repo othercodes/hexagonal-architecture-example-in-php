@@ -18,7 +18,10 @@
   "autoload": {
     "psr-4": {
       "OtherCode\\": "src/"
-    }
+    },
+    "files": [
+      "src/Shared/Infrastructure/Persistence/Doctrine/orm.php"
+    ]
   },
   "scripts": {
     "test": "vendor/bin/pest --coverage --coverage-clover=coverage.xml --log-junit=test.xml",
@@ -26,7 +29,13 @@
   },
   "require-dev": {
     "pestphp/pest": "^2.34",
-    "mockery/mockery": "^1.6"
+    "mockery/mockery": "^1.6",
+    "pestphp/pest-plugin-faker": "^2.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
   },
   "config": {
     "allow-plugins": {

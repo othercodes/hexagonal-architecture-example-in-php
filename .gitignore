@@ -4,3 +4,4 @@ db.sqlite
 composer.lock
 coverage.xml
 test.xml
+/data

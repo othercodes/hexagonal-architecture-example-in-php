@@ -8,4 +8,8 @@ require_once __DIR__."/../vendor/autoload.php";
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
 
-ConsoleRunner::run(new SingleManagerProvider(require __DIR__.'/../database.php'));
+use function OtherCode\Shared\Infrastructure\Persistence\Doctrine\provideEntityManger;
+
+$configuration = require 'configuration.php';
+
+ConsoleRunner::run(new SingleManagerProvider(provideEntityManger($configuration['persistence']['database'])));

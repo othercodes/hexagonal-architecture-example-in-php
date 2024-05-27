@@ -13,4 +13,6 @@ interface UserRepository
     public function all(): array;
 
     public function save(User $user): User;
+
+    public function delete(User $user): void;
 }
