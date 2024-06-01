@@ -24,6 +24,9 @@ final readonly class UserFinder
         return $user;
     }
 
+    /**
+     * @return array<User>
+     */
     public function all(): array
     {
         return $this->repository->all();

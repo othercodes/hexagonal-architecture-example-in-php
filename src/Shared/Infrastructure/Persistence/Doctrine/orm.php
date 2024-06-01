@@ -8,6 +8,10 @@ use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
 
+/**
+ * @param  array<string, array<string, mixed>>  $parameters
+ * @return EntityManager
+ */
 function provideEntityManger(array $parameters = []): EntityManager
 {
     $parameters = array_replace_recursive([
