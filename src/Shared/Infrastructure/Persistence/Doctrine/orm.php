@@ -12,7 +12,7 @@ use Doctrine\ORM\ORMSetup;
  * @param  array<string, array<string, mixed>>  $parameters
  * @return EntityManager
  */
-function provideEntityManger(array $parameters = []): EntityManager
+function provideEntityManager(array $parameters = []): EntityManager
 {
     $parameters = array_replace_recursive([
         'orm' => [

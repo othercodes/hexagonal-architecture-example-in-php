@@ -9,7 +9,7 @@ use OtherCode\UserManagement\Infrastructure\Persistence\JsonFileUserRepository;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Doctrine\ORM\EntityManager;
 
-use function OtherCode\Shared\Infrastructure\Persistence\Doctrine\provideEntityManger;
+use function OtherCode\Shared\Infrastructure\Persistence\Doctrine\provideEntityManager;
 use function Pest\Faker\fake;
 
 abstract class TestCase extends BaseTestCase
@@ -29,7 +29,7 @@ abstract class TestCase extends BaseTestCase
         if (!isset(self::$repositories["$type::$context"])) {
             $fn = match ($type) {
                 DoctrineUserRepository::class => function (string $context, array $config) {
-                    return new DoctrineUserRepository(provideEntityManger($config['database']));
+                    return new DoctrineUserRepository(provideEntityManager($config['database']));
                 },
                 JsonFileUserRepository::class => function (string $context, array $config) {
                     if ($context !== 'default') {

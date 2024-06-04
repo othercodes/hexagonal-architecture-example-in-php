@@ -9,11 +9,11 @@ use OtherCode\UserManagement\Application\UserFinder;
 use OtherCode\UserManagement\Infrastructure\Persistence\DoctrineUserRepository;
 use OtherCode\UserManagement\Infrastructure\Persistence\JsonFileUserRepository;
 
-use function OtherCode\Shared\Infrastructure\Persistence\Doctrine\provideEntityManger;
+use function OtherCode\Shared\Infrastructure\Persistence\Doctrine\provideEntityManager;
 
 $configuration = require 'configuration.php';
 
-$repository = new DoctrineUserRepository(provideEntityManger($configuration['persistence']['database']));
+$repository = new DoctrineUserRepository(provideEntityManager($configuration['persistence']['database']));
 //$repository = new JsonFileUserRepository($configuration['persistence']['json']['path']);
 $service = new UserFinder($repository);
 
