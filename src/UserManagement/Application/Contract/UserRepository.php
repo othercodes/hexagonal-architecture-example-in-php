@@ -10,9 +10,6 @@ interface UserRepository
 {
     public function find(int $id): ?User;
 
-    /**
-     * @return array<User>
-     */
     public function all(): array;
 
     public function save(User $user): User;
