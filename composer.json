@@ -24,7 +24,10 @@
     ]
   },
   "scripts": {
-    "test": "vendor/bin/pest --coverage --coverage-clover=coverage.xml --log-junit=test.xml",
+    "test": "vendor/bin/pest --coverage",
+    "analyze": "vendor/bin/phpstan analyse",
+    "workflow:test": "vendor/bin/pest --coverage --coverage-clover=coverage.xml --log-junit=test.xml",
+    "workflow:analyze": "vendor/bin/phpstan analyse --error-format=github --no-progress",
     "db:initialize": "php bin/doctrine orm:schema-tool:update --force --dump-sql"
   },
   "require-dev": {
