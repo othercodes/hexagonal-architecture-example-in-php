@@ -1,5 +1,7 @@
 # Hexagonal Architecture Example in PHP
 
+[![Test](https://github.com/othercodes/hexagonal-architecture-example-in-php/actions/workflows/test.yml/badge.svg)](https://github.com/othercodes/hexagonal-architecture-example-in-php/actions/workflows/test.yml)
+
 Code example for [Hexagonal Architecture](https://othercode.io/blog/hexagonal-architecture) article.
 
 # Usage 
